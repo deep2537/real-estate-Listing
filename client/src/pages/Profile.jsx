@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useRef } from "react";
 import { deleteUserStart, deleteUserSuccess, deleteUserfailure, logoutUserStart, logoutUserSuccess, logoutUserfailure, updateUserStart,updateUserSucess,updateUserfailure } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
+import {Link} from "react-router-dom";
 const Profile = () => {
   const { currentUser ,loading,error} = useSelector((state) => state.user);
   const fileRef =useRef(null);
@@ -122,6 +123,9 @@ const Profile = () => {
         <button disabled={loading} className="bg-slate-700 text-white rounded-lg p-3 hover:opacity-90 disabled:opacity-70 font-semibold">
           {loading?"Loading ...":"Update"}
         </button>
+      <Link  className="bg-green-700 text-white p-3 rounded-lg text-center font-semibold hover:opacity-90"to={'/createlisting'}>
+        Create Listing
+      </Link>
       </form>
       <div className="flex justify-between mt-4">
         <span onClick={handleDeleteUser}className="text-red-700 cursor-pointer">Delete Account</span>
