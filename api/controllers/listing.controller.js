@@ -27,7 +27,7 @@ export const deleteListing=async(req,res,next)=>{
 }
 export const updateListing = async (req, res, next) => {
     const { id } = req.params;
-  
+    
     // Validate ObjectId
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return next(errorHandler(404, "Invalid Listing ID"));
@@ -39,8 +39,8 @@ export const updateListing = async (req, res, next) => {
       if (!listing) {
         return next(errorHandler(404, "Listing not Found"));
       }
-  
-      if (req.user.id !== listing.userRef) {
+      console.log(req.user.id+" "+ listing.useRef)
+      if (req.user.id !== listing.useRef) {
         return next(errorHandler(401, "You can only update your own Listings"));
       }
   
