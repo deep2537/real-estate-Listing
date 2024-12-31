@@ -225,7 +225,7 @@ const Profile = () => {
             </Link>
             <div className="flex flex-col items-center">
               <button className="text-red-700" onClick={()=>handleListingdelete(listing._id)}>Delete</button>
-              <button className="text-green-700">Edit</button>
+              <Link to={`/updatelisting/${listing._id}`}><button className="text-green-700">Edit</button></Link>
             </div>
           </div>
         ))}
