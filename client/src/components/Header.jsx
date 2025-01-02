@@ -10,13 +10,13 @@ const navigate=useNavigate();
 const handleSubmit=(e)=>{
   e.preventDefault();
   const urlParams=new URLSearchParams(window.location.search);
-  urlParams.set('search',searchTerm);
+  urlParams.set('searchTerm',searchTerm);
   const searchQuery=urlParams.toString();
   navigate(`/search?${searchQuery}`);
 }
 useEffect(()=>{
   const urlParams=new URLSearchParams(location.search);
-  const searchtermFromUrl=urlParams.get('search');
+  const searchtermFromUrl=urlParams.get('searchTerm');
   if(searchtermFromUrl){
     SetSearchTerm(searchtermFromUrl);
     console.log(searchTerm);
